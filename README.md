@@ -4,6 +4,7 @@ Repository for Lattice MachX02 Breakout Board Examples in VHDL
 # Prerequisites
 Hardware:
 * [Lattice MachX02 Breakout Board](https://www.latticesemi.com/en/Products/DevelopmentBoardsAndKits/MachXO2BreakoutBoard)
+
 Software:
 * [Lattice Diamond 3.11](http://www.latticesemi.com/latticediamond)
 * [VHDL Style Guide 2.0.0](https://github.com/jeremiah-c-leary/vhdl-style-guide)
