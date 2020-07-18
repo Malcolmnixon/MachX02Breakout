@@ -19,7 +19,7 @@
 				<BScanLen>1</BScanLen>
 				<BScanVal>0</BScanVal>
 			</Bypass>
-			<File>C:/mnixon/MachX02Breakout/Basic/impl1/Basic_impl1.jed</File>
+			<File>impl1\Basic_impl1.jed</File>
 			<FileTime>07/16/20 18:38:11</FileTime>
 			<JedecChecksum>0xC10C</JedecChecksum>
 			<Operation>FLASH Erase,Program,Verify</Operation>
