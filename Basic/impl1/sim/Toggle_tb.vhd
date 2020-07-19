@@ -26,7 +26,7 @@ ARCHITECTURE tb OF toggle_tb IS
 BEGIN
 
     --! Instantiate the toggle component
-    i_uut : ENTITY work.toggle(behavior)
+    i_uut : ENTITY work.toggle(rtl)
         GENERIC MAP (
             max_count => 2
         )

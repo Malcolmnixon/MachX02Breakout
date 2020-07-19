@@ -18,7 +18,7 @@ This repository currently contains two projects:
 ## Basic Project
 This project demonstrates blinking the 8 LEDs. It is configured as follows:
 * Internal oscillator for clock at 9.85MHz
-* Toggle process counts 1/2 second (4.925 million clocks) then toggles LEDs
+* Toggle entity counts 1/2 second (4.925 million clocks) then toggles LEDs
 
 ## PLL Project
 This project demonstrates blinking the 8 LEDs. It is configured as follows:
@@ -26,11 +26,12 @@ This project demonstrates blinking the 8 LEDs. It is configured as follows:
 * PLL created by IPexpress
   * Driven by 9.85MHz oscillator
   * Outputs 98.5MHz clock
-* Toggle process counts 1/2 second (49.25 million clocks) then toggles LEDs
+* Toggle entity counts 1/2 second (49.25 million clocks) then toggles LEDs
 
 # Scripts
 Both projects contain the following scripts
-* style.bat   - command line style checker using VSG
-* docs.bat    - command line documentation builder
-* build.bat   - command line build of project jedec (.jed) files
-* program.bat - command line programmer
+* style.bat    - command line style checker using VSG
+* docs.bat     - command line documentation builder
+* simulate.bat - command line simulation runner
+* build.bat    - command line build of project jedec (.jed) files
+* program.bat  - command line programmer

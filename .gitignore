@@ -9,6 +9,7 @@
 .spreadsheet_view.ini
 .floorplanner.ini
 .build_status
+._Real_._Math_.vhd
 .vdbs/
 generate_*.tcl
 xxx_lse_*
@@ -22,6 +23,10 @@ xxx_lse_*
 
 # Active-HDL Simulations
 */simulation/*
+library.cfg
+*.asdb
+*.mgf
+*.lib
 !*.spf
 
 # Doxygen output

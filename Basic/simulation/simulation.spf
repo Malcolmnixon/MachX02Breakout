@@ -5,5 +5,5 @@
     <SimLib value="pmi_work ovi_machxo2"/>
     <GlbInc value=""/>
     <Macro value=""/>
-    <TopModule instance="" language="VHDL" name="basic"/>
+    <TopModule instance="" language="VHDL" name="toggle_tb"/>
 </BaliSimProject>
