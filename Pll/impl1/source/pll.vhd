@@ -19,10 +19,11 @@ END ENTITY pll;
 --! Architecture behavior of pll entity
 ARCHITECTURE behavior OF pll IS
 
-    SIGNAL osc    : std_logic; --! Internal oscillator (9.85MHz)
-    SIGNAL clk    : std_logic; --! Main clock (98.5MHz)
-    SIGNAL lock   : std_logic; --! PLL Lock 
-    SIGNAL toggle : std_logic; --! Toggle signal
+    SIGNAL osc   : std_logic; --! Internal oscillator (9.85MHz)
+    SIGNAL lock  : std_logic; --! PLL Lock 
+    SIGNAL clk   : std_logic; --! Main clock (98.5MHz)
+    SIGNAL rst   : std_logic; --! Reset
+    SIGNAL state : std_logic; --! Toggle state
     
     --! Component declaration for the MachX02 internal oscillator
     COMPONENT osch IS
@@ -58,44 +59,36 @@ BEGIN
             sedstdby => OPEN
         );
 
-    --! Instantiate the PLL
+    --! Instantiate the PLL (9.85MHz -> 98.5MHz)
     i_pll : mc_pll
         PORT MAP (
             clki  => osc,
             clkop => clk,
             lock  => lock
         );
-            
-    --! @brief Toggle process
-    --!
-    --! This process counts the 98.5MHz clock and toggles the toggle signal
-    --! every 1/2 second
-    pr_toggle : PROCESS (clk) IS
+
+    --! Instantiate the toggle component
+    i_toggle : ENTITY work.toggle(behavior)
+        GENERIC MAP (
+            max_count => 49_250_000 - 1
+        )
+        PORT MAP (
+            clk_in  => clk,
+            rst_in  => rst,
+            sig_out => state
+        );
     
-        --! Clock counter
-        VARIABLE v_count : integer RANGE 0 TO 49_250_000;
-        
-    BEGIN
-    
-        IF (rising_edge(clk)) THEN
-            IF (v_count = 49_250_000) THEN
-                v_count := 0;           -- Reset count
-                toggle <= NOT toggle;   -- Toggle
-            ELSE
-                v_count := v_count + 1; -- Increment count
-            END IF;
-        END IF;
-        
-    END PROCESS pr_toggle;
+    --! Hold in reset until locked
+    rst <= NOT lock;
     
     -- Update LEDs
-    leds_out(0) <= toggle;
-    leds_out(1) <= toggle;
-    leds_out(2) <= toggle;
-    leds_out(3) <= toggle;
-    leds_out(4) <= toggle;
-    leds_out(5) <= toggle;
-    leds_out(6) <= toggle;
-    leds_out(7) <= toggle;
+    leds_out(0) <= state;
+    leds_out(1) <= state;
+    leds_out(2) <= state;
+    leds_out(3) <= state;
+    leds_out(4) <= state;
+    leds_out(5) <= state;
+    leds_out(6) <= state;
+    leds_out(7) <= state;
 
 END ARCHITECTURE behavior;

@@ -43,6 +43,9 @@ rule:
   architecture_028:
     case: 'upper'   # Upper-case ARCHITECTURE keyword
       
+  constant_002:
+    case: 'upper'   # Upper-case CONSTANT keyword
+  
   component_003:
     disable: true   # Allow comment before component
   component_004:
@@ -58,6 +61,8 @@ rule:
     case: 'upper'   # Upper-case PORT MAP keyword
   instantiation_013:
     case: 'upper'   # Upper-case GENERIC MAP keyword
+  instantiation_027:
+    case: 'upper'   # Upper-case ENTITY keyword
   
   signal_002:
     case: 'upper'   # Upper-case SIGNAL keyword
@@ -80,6 +85,8 @@ rule:
     
   if_025:
     case: 'upper'   # Upper-case IF keyword
+  if_026:
+    case: 'upper'   # Upper-case ELSIF keyword
   if_027:
     case: 'upper'   # Upper-case ELSE keyword
   if_028:
