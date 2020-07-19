@@ -1,0 +1,3 @@
+*.sty                   linguist-vendored
+generated_*.tcl         linguist-generated
+mc_pll*.*               linguist_generated
