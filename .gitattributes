@@ -1,3 +1,4 @@
 *.sty                   linguist-vendored
-generated_*.tcl         linguist-generated
+generate_*.tcl          linguist-generated
 mc_pll*.*               linguist_generated
+*.do                    linguist-language=tcl
