@@ -1,2 +1,4 @@
 file_list:
  - impl1/source/Basic.vhd
+ - impl1/source/Toggle.vhd
+ - impl1/sim/Toggle_tb.vhd

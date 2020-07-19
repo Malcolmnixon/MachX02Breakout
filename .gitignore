@@ -7,6 +7,7 @@
 .setting.ini
 .spread_sheet.ini
 .spreadsheet_view.ini
+.floorplanner.ini
 .build_status
 .vdbs/
 generate_*.tcl
@@ -18,6 +19,10 @@ xxx_lse_*
 *.html
 *.twr
 *.xml
+
+# Active-HDL Simulations
+*/simulation/*
+!*.spf
 
 # Doxygen output
 */docs/html/
