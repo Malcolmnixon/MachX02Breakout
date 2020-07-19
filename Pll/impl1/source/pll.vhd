@@ -16,8 +16,8 @@ ENTITY pll IS
     );
 END ENTITY pll;
 
---! Architecture behavior of pll entity
-ARCHITECTURE behavior OF pll IS
+--! Architecture rtl of pll entity
+ARCHITECTURE rtl OF pll IS
 
     SIGNAL osc   : std_logic; --! Internal oscillator (9.85MHz)
     SIGNAL lock  : std_logic; --! PLL Lock 
@@ -68,7 +68,7 @@ BEGIN
         );
 
     --! Instantiate the toggle component
-    i_toggle : ENTITY work.toggle(behavior)
+    i_toggle : ENTITY work.toggle(rtl)
         GENERIC MAP (
             max_count => 49_250_000 - 1
         )
@@ -91,4 +91,4 @@ BEGIN
     leds_out(6) <= state;
     leds_out(7) <= state;
 
-END ARCHITECTURE behavior;
+END ARCHITECTURE rtl;

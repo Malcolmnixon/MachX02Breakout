@@ -24,8 +24,8 @@ ENTITY toggle IS
     );
 END ENTITY toggle;
 
---! Architecture behavior of toggle entity
-ARCHITECTURE behavior OF toggle IS
+--! Architecture rtl of toggle entity
+ARCHITECTURE rtl OF toggle IS
 
     --! Internal counter
     SIGNAL count : integer RANGE 0 TO max_count;
@@ -60,4 +60,4 @@ BEGIN
 
     sig_out <= state;
 
-END ARCHITECTURE behavior;
+END ARCHITECTURE rtl;

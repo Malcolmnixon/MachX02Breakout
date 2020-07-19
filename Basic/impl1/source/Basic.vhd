@@ -16,8 +16,8 @@ ENTITY basic IS
     );
 END ENTITY basic;
 
---! Architecture behavior of basic entity
-ARCHITECTURE behavior OF basic IS
+--! Architecture rtl of basic entity
+ARCHITECTURE rtl OF basic IS
 
     --! Main clock (9.85MHz)
     SIGNAL clk : std_logic;
@@ -51,7 +51,7 @@ BEGIN
         );
 
     --! Instantiate the toggle component
-    i_toggle : ENTITY work.toggle(behavior)
+    i_toggle : ENTITY work.toggle(rtl)
         GENERIC MAP (
             max_count => 4_925_000 - 1
         )
@@ -71,4 +71,4 @@ BEGIN
     leds_out(6) <= state;
     leds_out(7) <= state;
 
-END ARCHITECTURE behavior;
+END ARCHITECTURE rtl;
